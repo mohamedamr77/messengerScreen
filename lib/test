@@ -1,0 +1,21 @@
+  ListView.builder(
+                     itemBuilder:(context, index) => Message(
+                         name: messageList[index]["name"],
+                         messageText: messageList[index]["messageText"],
+                         time: messageList[index]["time"],
+                         image: messageList[index]["image"]),
+                        itemCount: messageList.length,
+                         shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                 )
+
+ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => StoryApp(
+                        image: storyList[index]["image"],
+                        name: storyList[index]["name"],
+                      ),
+                  itemCount: storyList.length,
+                  separatorBuilder: (BuildContext context, int index) => SizedBox(width: 10,),
+
+ ),
